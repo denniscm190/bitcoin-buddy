@@ -7,6 +7,11 @@
 
 import SwiftUI
 
-struct BitcoinResponseModel: Codable {
-    
+struct BitcoinResponse: Codable {
+    let message: BitcoinMessage
+    let statusCode: Int
+}
+
+struct BitcoinMessage: Codable {
+    let price: String
 }

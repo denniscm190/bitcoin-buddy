@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct BitcoinPriceItem: View {
+    var price: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("1 BTC is worth \(price)")
+            .font(.title)
+            .fontWeight(.semibold)
+            .foregroundColor(.white)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 25)
+                    .foregroundColor(Color("AccentColor"))
+            )
     }
 }
 
 struct BitcoinPriceItem_Previews: PreviewProvider {
     static var previews: some View {
-        BitcoinPriceItem()
+        BitcoinPriceItem(price: "$50,328.24")
     }
 }

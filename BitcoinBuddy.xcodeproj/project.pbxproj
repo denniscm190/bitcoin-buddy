@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		953E576E275EC84A0017DFA3 /* BitcoinPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E576D275EC84A0017DFA3 /* BitcoinPrice.swift */; };
 		957EEA0927523C3A00F326E1 /* BitcoinBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957EEA0827523C3A00F326E1 /* BitcoinBuddyApp.swift */; };
 		957EEA0B27523C3A00F326E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957EEA0A27523C3A00F326E1 /* ContentView.swift */; };
 		957EEA0D27523C3B00F326E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957EEA0C27523C3B00F326E1 /* Assets.xcassets */; };
@@ -16,6 +17,8 @@
 		957EEA1F27523C3B00F326E1 /* BitcoinBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957EEA1E27523C3B00F326E1 /* BitcoinBuddyTests.swift */; };
 		957EEA2927523C3B00F326E1 /* BitcoinBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957EEA2827523C3B00F326E1 /* BitcoinBuddyUITests.swift */; };
 		957EEA2B27523C3B00F326E1 /* BitcoinBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957EEA2A27523C3B00F326E1 /* BitcoinBuddyUITestsLaunchTests.swift */; };
+		95D627C8275F5571007C1BF4 /* BitcoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D627C7275F5571007C1BF4 /* BitcoinModel.swift */; };
+		95D627CB275F6122007C1BF4 /* BitcoinPriceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D627CA275F6122007C1BF4 /* BitcoinPriceItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		957EEA0527523C3A00F326E1 /* BitcoinBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		953E576D275EC84A0017DFA3 /* BitcoinPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPrice.swift; sourceTree = "<group>"; };
+		957EEA0527523C3A00F326E1 /* Bitcoin Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bitcoin Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		957EEA0827523C3A00F326E1 /* BitcoinBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinBuddyApp.swift; sourceTree = "<group>"; };
 		957EEA0A27523C3A00F326E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		957EEA0C27523C3B00F326E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +52,8 @@
 		957EEA2427523C3B00F326E1 /* BitcoinBuddyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinBuddyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		957EEA2827523C3B00F326E1 /* BitcoinBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinBuddyUITests.swift; sourceTree = "<group>"; };
 		957EEA2A27523C3B00F326E1 /* BitcoinBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		95D627C7275F5571007C1BF4 /* BitcoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinModel.swift; sourceTree = "<group>"; };
+		95D627CA275F6122007C1BF4 /* BitcoinPriceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +94,7 @@
 		957EEA0627523C3A00F326E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				957EEA0527523C3A00F326E1 /* BitcoinBuddy.app */,
+				957EEA0527523C3A00F326E1 /* Bitcoin Buddy.app */,
 				957EEA1A27523C3B00F326E1 /* BitcoinBuddyTests.xctest */,
 				957EEA2427523C3B00F326E1 /* BitcoinBuddyUITests.xctest */,
 			);
@@ -98,12 +104,15 @@
 		957EEA0727523C3A00F326E1 /* BitcoinBuddy */ = {
 			isa = PBXGroup;
 			children = (
-				957EEA0827523C3A00F326E1 /* BitcoinBuddyApp.swift */,
-				957EEA0A27523C3A00F326E1 /* ContentView.swift */,
-				957EEA0C27523C3B00F326E1 /* Assets.xcassets */,
-				957EEA1127523C3B00F326E1 /* Persistence.swift */,
-				957EEA1327523C3B00F326E1 /* BitcoinBuddy.xcdatamodeld */,
 				957EEA0E27523C3B00F326E1 /* Preview Content */,
+				95D627C9275F60FD007C1BF4 /* Helpers */,
+				95D627C6275F554E007C1BF4 /* Models */,
+				957EEA0C27523C3B00F326E1 /* Assets.xcassets */,
+				957EEA1327523C3B00F326E1 /* BitcoinBuddy.xcdatamodeld */,
+				957EEA0827523C3A00F326E1 /* BitcoinBuddyApp.swift */,
+				957EEA1127523C3B00F326E1 /* Persistence.swift */,
+				957EEA0A27523C3A00F326E1 /* ContentView.swift */,
+				953E576D275EC84A0017DFA3 /* BitcoinPrice.swift */,
 			);
 			path = BitcoinBuddy;
 			sourceTree = "<group>";
@@ -133,6 +142,22 @@
 			path = BitcoinBuddyUITests;
 			sourceTree = "<group>";
 		};
+		95D627C6275F554E007C1BF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95D627C7275F5571007C1BF4 /* BitcoinModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95D627C9275F60FD007C1BF4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				95D627CA275F6122007C1BF4 /* BitcoinPriceItem.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,8 +174,10 @@
 			dependencies = (
 			);
 			name = BitcoinBuddy;
+			packageProductDependencies = (
+			);
 			productName = BitcoinBuddy;
-			productReference = 957EEA0527523C3A00F326E1 /* BitcoinBuddy.app */;
+			productReference = 957EEA0527523C3A00F326E1 /* Bitcoin Buddy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		957EEA1927523C3B00F326E1 /* BitcoinBuddyTests */ = {
@@ -221,6 +248,8 @@
 				Base,
 			);
 			mainGroup = 957EE9FC27523C3900F326E1;
+			packageReferences = (
+			);
 			productRefGroup = 957EEA0627523C3A00F326E1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,10 +292,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D627CB275F6122007C1BF4 /* BitcoinPriceItem.swift in Sources */,
 				957EEA1227523C3B00F326E1 /* Persistence.swift in Sources */,
 				957EEA1527523C3B00F326E1 /* BitcoinBuddy.xcdatamodeld in Sources */,
 				957EEA0B27523C3A00F326E1 /* ContentView.swift in Sources */,
+				95D627C8275F5571007C1BF4 /* BitcoinModel.swift in Sources */,
 				957EEA0927523C3A00F326E1 /* BitcoinBuddyApp.swift in Sources */,
+				953E576E275EC84A0017DFA3 /* BitcoinPrice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,12 +471,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.dennistech.BitcoinBuddy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bitcoin Buddy";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -468,12 +500,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = io.dennistech.BitcoinBuddy;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bitcoin Buddy";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
