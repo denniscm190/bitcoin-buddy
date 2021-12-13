@@ -11,15 +11,27 @@ struct BitcoinPriceItem: View {
     var price: String
     
     var body: some View {
-        Text("1 BTC is worth \(price)")
-            .font(.title)
-            .fontWeight(.semibold)
-            .foregroundColor(.white)
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 25)
-                    .foregroundColor(Color("AccentColor"))
-            )
+        HStack {
+            Image("BitcoinLogo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 90, height: 90)
+                .padding(.trailing)
+            
+            VStack {
+                Text(price)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                
+                HStack {
+                    Text(Date.now, format: .dateTime.day().month().year())
+                    Text(Date.now, format: .dateTime.hour().minute())
+                }
+                .font(.callout)
+                .opacity(0.6)
+                
+            }
+        }
     }
 }
 

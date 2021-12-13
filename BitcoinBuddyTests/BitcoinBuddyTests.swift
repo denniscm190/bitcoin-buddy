@@ -2,11 +2,10 @@
 //  BitcoinBuddyTests.swift
 //  BitcoinBuddyTests
 //
-//  Created by Dennis Concepción Martín on 27/11/21.
+//  Created by Dennis Concepción Martín on 12/12/21.
 //
 
 import XCTest
-@testable import BitcoinBuddy
 
 class BitcoinBuddyTests: XCTestCase {
 
@@ -25,7 +24,7 @@ class BitcoinBuddyTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

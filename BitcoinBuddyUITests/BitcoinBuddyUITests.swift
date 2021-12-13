@@ -2,7 +2,7 @@
 //  BitcoinBuddyUITests.swift
 //  BitcoinBuddyUITests
 //
-//  Created by Dennis Concepción Martín on 27/11/21.
+//  Created by Dennis Concepción Martín on 12/12/21.
 //
 
 import XCTest
