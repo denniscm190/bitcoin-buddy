@@ -22,6 +22,9 @@
 		95AA94512767CC2C0069CCF9 /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AA94502767CC2C0069CCF9 /* HttpRequest.swift */; };
 		95D627C8275F5571007C1BF4 /* BitcoinPriceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D627C7275F5571007C1BF4 /* BitcoinPriceModel.swift */; };
 		95D627CB275F6122007C1BF4 /* BitcoinPriceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D627CA275F6122007C1BF4 /* BitcoinPriceItem.swift */; };
+		95ED82DE276C98580082A3EE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED82DD276C98580082A3EE /* AboutView.swift */; };
+		95ED82E0276C9ECE0082A3EE /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED82DF276C9ECE0082A3EE /* Sidebar.swift */; };
+		95ED82E2276C9FFB0082A3EE /* ConditionalWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED82E1276C9FFB0082A3EE /* ConditionalWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		95AA94502767CC2C0069CCF9 /* HttpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		95D627C7275F5571007C1BF4 /* BitcoinPriceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceModel.swift; sourceTree = "<group>"; };
 		95D627CA275F6122007C1BF4 /* BitcoinPriceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinPriceItem.swift; sourceTree = "<group>"; };
+		95ED82DD276C98580082A3EE /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		95ED82DF276C9ECE0082A3EE /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
+		95ED82E1276C9FFB0082A3EE /* ConditionalWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 				957EEA1127523C3B00F326E1 /* Persistence.swift */,
 				957EEA0A27523C3A00F326E1 /* ContentView.swift */,
 				953E576D275EC84A0017DFA3 /* BitcoinView.swift */,
+				95ED82DD276C98580082A3EE /* AboutView.swift */,
 			);
 			path = BitcoinBuddy;
 			sourceTree = "<group>";
@@ -163,6 +170,8 @@
 				95D627CA275F6122007C1BF4 /* BitcoinPriceItem.swift */,
 				9582B0CC276666340041A735 /* StatItem.swift */,
 				95AA94502767CC2C0069CCF9 /* HttpRequest.swift */,
+				95ED82DF276C9ECE0082A3EE /* Sidebar.swift */,
+				95ED82E1276C9FFB0082A3EE /* ConditionalWrapper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -303,13 +312,16 @@
 			files = (
 				95D627CB275F6122007C1BF4 /* BitcoinPriceItem.swift in Sources */,
 				95AA94512767CC2C0069CCF9 /* HttpRequest.swift in Sources */,
+				95ED82DE276C98580082A3EE /* AboutView.swift in Sources */,
 				9582B0CB276661930041A735 /* BitcoinQuoteModel.swift in Sources */,
 				957EEA1227523C3B00F326E1 /* Persistence.swift in Sources */,
 				957EEA1527523C3B00F326E1 /* BitcoinBuddy.xcdatamodeld in Sources */,
 				957EEA0B27523C3A00F326E1 /* ContentView.swift in Sources */,
+				95ED82E2276C9FFB0082A3EE /* ConditionalWrapper.swift in Sources */,
 				95D627C8275F5571007C1BF4 /* BitcoinPriceModel.swift in Sources */,
 				957EEA0927523C3A00F326E1 /* BitcoinBuddyApp.swift in Sources */,
 				9582B0CD276666340041A735 /* StatItem.swift in Sources */,
+				95ED82E0276C9ECE0082A3EE /* Sidebar.swift in Sources */,
 				953E576E275EC84A0017DFA3 /* BitcoinView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,7 +481,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"BitcoinBuddy/Preview Content\"";
 				DEVELOPMENT_TEAM = MTX83R5H8X;
 				ENABLE_PREVIEWS = YES;
@@ -499,7 +511,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"BitcoinBuddy/Preview Content\"";
 				DEVELOPMENT_TEAM = MTX83R5H8X;
 				ENABLE_PREVIEWS = YES;

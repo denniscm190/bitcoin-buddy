@@ -16,25 +16,25 @@ struct BitcoinView: View {
     let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
 
     var body: some View {
-        NavigationView {
+        Form {
+            BitcoinPriceItem(price: convertToDollar(number: price.price))
+                .padding(.vertical)
             
-            Form {
-                BitcoinPriceItem(price: convertToDollar(number: price.price))
-                    .padding(.vertical)
-                
-                Section(header: Text("Stats")) {
-                    StatItem(name: "Ask price", value: convertToDollar(number: quote.askPrice))
-                    StatItem(name: "Bid price", value: convertToDecimal(number: quote.bidPrice))
-                    StatItem(name: "Ask size", value: convertToDecimal(number: quote.askSize))
-                    StatItem(name: "Bid size", value: convertToDecimal(number: quote.bidSize))
-                    StatItem(name: "Change", value: convertToDecimal(number: String(quote.change)))
-                    StatItem(name: "Percent change", value: convertToPercent(number: String(quote.changePercent)))
-                    StatItem(name: "High", value: convertToDollar(number: quote.high))
-                    StatItem(name: "Low", value: convertToDollar(number: quote.low))
-                    StatItem(name: "Latest volume", value: convertToDecimal(number: quote.latestVolume))
-                }
+            Section(header: Text("Stats")) {
+                StatItem(name: "Ask price", value: convertToDollar(number: quote.askPrice))
+                StatItem(name: "Bid price", value: convertToDecimal(number: quote.bidPrice))
+                StatItem(name: "Ask size", value: convertToDecimal(number: quote.askSize))
+                StatItem(name: "Bid size", value: convertToDecimal(number: quote.bidSize))
+                StatItem(name: "Change", value: convertToDecimal(number: String(quote.change)))
+                StatItem(name: "Percent change", value: convertToPercent(number: String(quote.changePercent)))
+                StatItem(name: "High", value: convertToDollar(number: quote.high))
+                StatItem(name: "Low", value: convertToDollar(number: quote.low))
+                StatItem(name: "Latest volume", value: convertToDecimal(number: quote.latestVolume))
             }
-            .navigationTitle("Hey!")
+        }
+        .navigationTitle("Hey!")
+        .if(UIDevice.current.userInterfaceIdiom == .phone) { content in
+            NavigationView { content }
         }
         .onAppear(perform: requestApi)
         .onReceive(timer) { _ in
