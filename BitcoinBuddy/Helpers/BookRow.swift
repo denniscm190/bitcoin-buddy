@@ -12,17 +12,16 @@ struct BookRow: View {
     var color: Color
     
     var body: some View {
-        let price = formatToCurrency(amount: Float(book.price)!, with: "USD")
-        RoundedRectangle(cornerRadius: 15)
-            .frame(height: 50)
-            .foregroundColor(Color(.secondarySystemBackground))
-            .overlay(
-                Text(price)
-                    .fontWeight(.semibold)
-                    .foregroundColor(color)
-                    .opacity(0.7)
-                    .lineLimit(1)
-            )
+        VStack {
+            let price = formatToCurrency(amount: Float(book.price)!, with: "USD")
+            Text(price)
+                .fontWeight(.semibold)
+                .foregroundColor(color)
+                .opacity(0.7)
+                .lineLimit(1)
+            
+            Divider()
+        }
     }
 }
 

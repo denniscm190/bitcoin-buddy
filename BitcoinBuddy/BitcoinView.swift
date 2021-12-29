@@ -25,6 +25,7 @@ struct BitcoinView: View {
                         Text("Asks")
                             .font(.title2)
                             .fontWeight(.bold)
+                            .padding(.bottom)
                         
                         ForEach(book.asks.reversed(), id: \.self) { ask in
                             BookRow(book: ask, color: .red)
@@ -36,6 +37,7 @@ struct BitcoinView: View {
                         Text("Bids")
                             .font(.title2)
                             .fontWeight(.bold)
+                            .padding(.bottom)
                         
                         ForEach(book.bids.reversed(), id: \.self) { bid in
                             BookRow(book: bid, color: .green)
