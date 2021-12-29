@@ -1,18 +1,19 @@
 //
-//  HttpRequest.swift
+//  Networking.swift
 //  BitcoinBuddy
 //
-//  Created by Dennis Concepción Martín on 13/12/21.
+//  Created by Dennis Concepción Martín on 28/12/21.
 //
 
 import Foundation
 
-// Network request
+// MARK: - HTTP REQUEST
 func httpRequest<T: Decodable>(url: String, model: T.Type, completion: @escaping (_ result: T) -> Void) {
     guard let url = URL(string: url) else {
         print("Invalid URL")
         return
     }
+    
     let request = URLRequest(url: url)
     URLSession.shared.dataTask(with: request) { data, response, error in
         if let data = data {

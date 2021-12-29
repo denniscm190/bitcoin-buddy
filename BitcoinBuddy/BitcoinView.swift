@@ -2,101 +2,91 @@
 //  BitcoinView.swift
 //  BitcoinBuddy
 //
-//  Created by Dennis Concepción Martín on 6/12/21.
+//  Created by Dennis Concepción Martín on 29/12/21.
 //
 
 import SwiftUI
 
 struct BitcoinView: View {
-    @State private var price = BitcoinPriceMessage(price: "")
-    @State private var quote = BitcoinQuoteMessage(
-        askPrice: "", askSize: "", bidPrice: "", bidSize: "", change: 0, changePercent: 0, high: "", latestVolume: "", low: ""
-    )
     
-    let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
-
+    // API request
+    @State private var quote = QuoteResult(latestPrice: "", changePercent: 0, change: 0, latestUpdate: 0)
+    @State private var book = BookNestedResponse(bids: [BookResult](), asks: [BookResult]())
+    @State private var quoteTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
+    @State private var bookTimer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    
     var body: some View {
-        Form {
-            BitcoinPriceItem(price: convertToDollar(number: price.price))
-                .padding(.vertical)
-            
-            Section(header: Text("Stats")) {
-                StatItem(name: "Ask price", value: convertToDollar(number: quote.askPrice))
-                StatItem(name: "Bid price", value: convertToDecimal(number: quote.bidPrice))
-                StatItem(name: "Ask size", value: convertToDecimal(number: quote.askSize))
-                StatItem(name: "Bid size", value: convertToDecimal(number: quote.bidSize))
-                StatItem(name: "Change", value: convertToDecimal(number: String(quote.change)))
-                StatItem(name: "Percent change", value: convertToPercent(number: String(quote.changePercent)))
-                StatItem(name: "High", value: convertToDollar(number: quote.high))
-                StatItem(name: "Low", value: convertToDollar(number: quote.low))
-                StatItem(name: "Latest volume", value: convertToDecimal(number: quote.latestVolume))
+        ScrollView {
+            VStack(spacing: 20) {
+                PriceBox(quote: quote)
+                
+                HStack {
+                    VStack(alignment: .center) {
+                        Text("Asks")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        
+                        ForEach(book.asks.reversed(), id: \.self) { ask in
+                            BookRow(book: ask, color: .red)
+                        }
+                    }
+                    
+                    Spacer()
+                    VStack(alignment: .center) {
+                        Text("Bids")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                        
+                        ForEach(book.bids.reversed(), id: \.self) { bid in
+                            BookRow(book: bid, color: .green)
+                        }
+                    }
+                }
+                .padding(.top)
             }
+            .padding(.horizontal)
         }
-        .navigationTitle("Hey!")
+        .onAppear {
+            getQuote()
+            getBook()
+            quoteTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
+            bookTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+        }
+        .onReceive(quoteTimer) { _ in
+            getQuote()
+        }
+        .onReceive(bookTimer) { _ in
+            getBook()
+        }
+        .onDisappear {
+            quoteTimer.upstream.connect().cancel()
+            bookTimer.upstream.connect().cancel()
+        }
+        .navigationTitle("Bitcoin")
         .if(UIDevice.current.userInterfaceIdiom == .phone) { content in
             NavigationView { content }
         }
-        .onAppear(perform: requestApi)
-        .onReceive(timer) { _ in
-            requestApi()
+    }
+    
+    // Request Bitcoin quote
+    private func getQuote() {
+        let url = "https://api.bitcoinbuddy.app/crypto/btcusdt/quote"
+        httpRequest(url: url, model: QuoteResponse.self) { response in
+            quote = response.message
         }
     }
     
-    private func requestApi() {
-        httpRequest(url: "https://api.bitcoinbuddy.app/price/btc", model: BitcoinPriceResponse.self) { result in
-            price = result.message
-            print("Price endpoint requested")
+    // Request Bitcoin book
+    private func getBook() {
+        let url = "https://api.bitcoinbuddy.app/crypto/btcusdt/book"
+        httpRequest(url: url, model: BookResponse.self) { response in
+            book.asks.append(contentsOf: response.message.asks)
+            book.bids.append(contentsOf: response.message.bids)
         }
-        
-        httpRequest(url: "https://api.bitcoinbuddy.app/quote/btc", model: BitcoinQuoteResponse.self) { result in
-            quote = result.message
-            print("Quote endpoint requested")
-        }
-    }
-    
-    // Format currency
-    private func convertToDollar(number: String) -> String {
-        guard let number = Float(number) else {
-            return String()
-        }
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = "USD"
-        formatter.maximumFractionDigits = 2
-        let result = NSNumber(value: number)
-        
-        return formatter.string(from: result)!
-    }
-
-    // Format percent number
-    private func convertToPercent(number: String) -> String {
-        guard let number = Float(number) else {
-            return String()
-        }
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .percent
-        let result = NSNumber(value: number)
-        
-        return formatter.string(from: result)!
-    }
-
-    // Format decimal number
-    private func convertToDecimal(number: String) -> String {
-        guard let number = Float(number) else {
-            return String()
-        }
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let result = NSNumber(value: number)
-        
-        return formatter.string(from: result)!
     }
 }
 
-struct BitcoinPrice_Previews: PreviewProvider {
+struct BitcoinView_Previews: PreviewProvider {
     static var previews: some View {
         BitcoinView()
     }

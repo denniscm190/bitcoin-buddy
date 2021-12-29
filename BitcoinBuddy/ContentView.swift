@@ -8,31 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var tab: Tab = .home
-        
     private enum Tab {
-        case home, settings
+        case bitcoin, wallet, about
     }
+    
+    @State private var tab: Tab = .bitcoin
     
     @ViewBuilder var view: some View {
         if UIDevice.current.userInterfaceIdiom == .pad {
             NavigationView {
-                Sidebar()
-                BitcoinView()
+
             }
         } else {
             TabView(selection: $tab) {
                 BitcoinView()
                     .tabItem {
-                        Label("Convert", systemImage: "arrow.counterclockwise.circle")
+                        Label("Bitcoin", systemImage: "bitcoinsign.circle.fill")
                     }
-                    .tag(Tab.home)
+                    .tag(Tab.bitcoin)
 
-                AboutView()
+                Text("Wallet view")
                     .tabItem {
-                        Label("About", systemImage: "info.circle")
+                        Label("Wallet", systemImage: "bag.fill.badge.plus")
                     }
-                    .tag(Tab.settings)
+                    .tag(Tab.wallet)
+                
+                Text("About view")
+                    .tabItem {
+                        Label("About", systemImage: "info.circle.fill")
+                    }
+                    .tag(Tab.about)
             }
         }
     }
