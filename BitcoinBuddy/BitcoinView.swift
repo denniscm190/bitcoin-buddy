@@ -28,7 +28,7 @@ struct BitcoinView: View {
                             .padding(.bottom)
                         
                         ForEach(book.asks.reversed(), id: \.self) { ask in
-                            BookRow(book: ask, color: .red)
+                            BookRow(book: ask, color: .green)
                         }
                     }
                     
@@ -40,7 +40,7 @@ struct BitcoinView: View {
                             .padding(.bottom)
                         
                         ForEach(book.bids.reversed(), id: \.self) { bid in
-                            BookRow(book: bid, color: .green)
+                            BookRow(book: bid, color: .red)
                         }
                     }
                 }
@@ -52,7 +52,7 @@ struct BitcoinView: View {
             getQuote()
             getBook()
             quoteTimer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
-            bookTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+            bookTimer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
         }
         .onReceive(quoteTimer) { _ in
             getQuote()

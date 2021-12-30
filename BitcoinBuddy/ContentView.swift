@@ -17,7 +17,8 @@ struct ContentView: View {
     @ViewBuilder var view: some View {
         if UIDevice.current.userInterfaceIdiom == .pad {
             NavigationView {
-
+                Sidebar()
+                BitcoinView()
             }
         } else {
             TabView(selection: $tab) {
@@ -33,7 +34,7 @@ struct ContentView: View {
                     }
                     .tag(Tab.wallet)
                 
-                Text("About view")
+                AboutView()
                     .tabItem {
                         Label("About", systemImage: "info.circle.fill")
                     }

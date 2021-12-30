@@ -19,6 +19,8 @@
 		957EEA1027523C3B00F326E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957EEA0F27523C3B00F326E1 /* Preview Assets.xcassets */; };
 		957EEA1227523C3B00F326E1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957EEA1127523C3B00F326E1 /* Persistence.swift */; };
 		957EEA1527523C3B00F326E1 /* BitcoinBuddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 957EEA1327523C3B00F326E1 /* BitcoinBuddy.xcdatamodeld */; };
+		958198A8277DBE8800078CEC /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958198A7277DBE8800078CEC /* AboutView.swift */; };
+		958198AA277DBEBC00078CEC /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958198A9277DBEBC00078CEC /* Sidebar.swift */; };
 		959CFF1F277CABE000C332B7 /* BookRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959CFF1E277CABE000C332B7 /* BookRow.swift */; };
 		95A8D20A2765EFE700D04EFD /* BitcoinBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8D2092765EFE700D04EFD /* BitcoinBuddyTests.swift */; };
 		95A8D2362765F08D00D04EFD /* BitcoinBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8D2322765F05D00D04EFD /* BitcoinBuddyUITestsLaunchTests.swift */; };
@@ -61,6 +63,8 @@
 		957EEA0F27523C3B00F326E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		957EEA1127523C3B00F326E1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		957EEA1427523C3B00F326E1 /* BitcoinBuddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BitcoinBuddy.xcdatamodel; sourceTree = "<group>"; };
+		958198A7277DBE8800078CEC /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		958198A9277DBEBC00078CEC /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		959CFF1E277CABE000C332B7 /* BookRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRow.swift; sourceTree = "<group>"; };
 		95A8D2072765EFE700D04EFD /* BitcoinBuddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinBuddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A8D2092765EFE700D04EFD /* BitcoinBuddyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinBuddyTests.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				957EEA0827523C3A00F326E1 /* BitcoinBuddyApp.swift */,
 				957EEA0A27523C3A00F326E1 /* ContentView.swift */,
 				95393755277C5F94001A0893 /* BitcoinView.swift */,
+				958198A7277DBE8800078CEC /* AboutView.swift */,
 				95E2089F277BAF9A009E3F52 /* Helpers */,
 				954C8CFD277B89E60008CE61 /* Models */,
 				95E20898277BAE01009E3F52 /* Functions */,
@@ -196,6 +201,7 @@
 			children = (
 				95393757277C634A001A0893 /* PriceBox.swift */,
 				959CFF1E277CABE000C332B7 /* BookRow.swift */,
+				958198A9277DBEBC00078CEC /* Sidebar.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				95393758277C634A001A0893 /* PriceBox.swift in Sources */,
 				9539375A277C64F8001A0893 /* Formatters.swift in Sources */,
 				954C8CFF277B8A060008CE61 /* QuoteModel.swift in Sources */,
+				958198A8277DBE8800078CEC /* AboutView.swift in Sources */,
 				957EEA1227523C3B00F326E1 /* Persistence.swift in Sources */,
 				95E2089C277BAE2F009E3F52 /* Networking.swift in Sources */,
 				957EEA1527523C3B00F326E1 /* BitcoinBuddy.xcdatamodeld in Sources */,
@@ -346,6 +353,7 @@
 				957EEA0927523C3A00F326E1 /* BitcoinBuddyApp.swift in Sources */,
 				95393756277C5F94001A0893 /* BitcoinView.swift in Sources */,
 				95E2089A277BAE16009E3F52 /* Extensions.swift in Sources */,
+				958198AA277DBEBC00078CEC /* Sidebar.swift in Sources */,
 				959CFF1F277CABE000C332B7 /* BookRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
