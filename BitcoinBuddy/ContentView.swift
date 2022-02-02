@@ -28,7 +28,7 @@ struct ContentView: View {
                     }
                     .tag(Tab.bitcoin)
 
-                Text("Wallet view")
+                WalletView()
                     .tabItem {
                         Label("Wallet", systemImage: "bag.fill.badge.plus")
                     }

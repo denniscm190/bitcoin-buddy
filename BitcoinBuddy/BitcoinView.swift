@@ -48,6 +48,7 @@ struct BitcoinView: View {
             }
             .padding(.horizontal)
         }
+        .padding(.top)
         .onAppear {
             getQuote()
             getBook()
@@ -64,7 +65,7 @@ struct BitcoinView: View {
             quoteTimer.upstream.connect().cancel()
             bookTimer.upstream.connect().cancel()
         }
-        .navigationTitle("Bitcoin")
+        .navigationTitle("Bitcoin price")
         .if(UIDevice.current.userInterfaceIdiom == .phone) { content in
             NavigationView { content }
         }

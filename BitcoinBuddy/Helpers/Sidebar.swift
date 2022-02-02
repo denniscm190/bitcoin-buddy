@@ -14,7 +14,7 @@ struct Sidebar: View {
                 Label("Bitcoin", systemImage: "bitcoinsign.circle.fill")
             }
             
-            NavigationLink(destination: Text("Wallet view")) {
+            NavigationLink(destination: WalletView()) {
                 Label("Wallet", systemImage: "bag.fill.badge.plus")
             }
             

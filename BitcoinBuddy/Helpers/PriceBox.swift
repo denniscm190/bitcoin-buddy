@@ -12,19 +12,19 @@ struct PriceBox: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 25)
-            .frame(height: 160)
+            .frame(height: 120)
             .foregroundColor(Color(.secondarySystemBackground))
             .overlay(
                 HStack(spacing: 20) {
                     Image("BitcoinLogo")
                         .resizable()
-                        .frame(width: 100, height: 100)
+                        .frame(width: 80, height: 80)
                     
                     VStack(alignment: .leading, spacing: 5) {
                         let floatPrice = convertToFloat(string: quote.latestPrice)
                         let formattedPrice = formatToCurrency(amount: floatPrice, with: "USD")
                         Text(formattedPrice)
-                            .font(.title)
+                            .font(.title2)
                             .fontWeight(.bold)
                         
                         HStack {
@@ -36,11 +36,6 @@ struct PriceBox: View {
                         }
                         .font(.headline)
                         .foregroundColor(colorReturn())
-                        
-//                        let stringDate = convertToDate(epoch: quote.latestUpdate / 1000)
-//                        Text(stringDate)
-//                            .font(.caption)
-//                            .opacity(0.4)
                     }
                 }
                     .padding()

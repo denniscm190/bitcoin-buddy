@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9505F13B277DD7DF003495F2 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505F13A277DD7DF003495F2 /* WalletView.swift */; };
 		95393756277C5F94001A0893 /* BitcoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393755277C5F94001A0893 /* BitcoinView.swift */; };
 		95393758277C634A001A0893 /* PriceBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393757277C634A001A0893 /* PriceBox.swift */; };
 		9539375A277C64F8001A0893 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393759277C64F8001A0893 /* Formatters.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9505F13A277DD7DF003495F2 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		95393755277C5F94001A0893 /* BitcoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinView.swift; sourceTree = "<group>"; };
 		95393757277C634A001A0893 /* PriceBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceBox.swift; sourceTree = "<group>"; };
 		95393759277C64F8001A0893 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				957EEA0827523C3A00F326E1 /* BitcoinBuddyApp.swift */,
 				957EEA0A27523C3A00F326E1 /* ContentView.swift */,
 				95393755277C5F94001A0893 /* BitcoinView.swift */,
+				9505F13A277DD7DF003495F2 /* WalletView.swift */,
 				958198A7277DBE8800078CEC /* AboutView.swift */,
 				95E2089F277BAF9A009E3F52 /* Helpers */,
 				954C8CFD277B89E60008CE61 /* Models */,
@@ -352,6 +355,7 @@
 				957EEA0B27523C3A00F326E1 /* ContentView.swift in Sources */,
 				957EEA0927523C3A00F326E1 /* BitcoinBuddyApp.swift in Sources */,
 				95393756277C5F94001A0893 /* BitcoinView.swift in Sources */,
+				9505F13B277DD7DF003495F2 /* WalletView.swift in Sources */,
 				95E2089A277BAE16009E3F52 /* Extensions.swift in Sources */,
 				958198AA277DBEBC00078CEC /* Sidebar.swift in Sources */,
 				959CFF1F277CABE000C332B7 /* BookRow.swift in Sources */,
